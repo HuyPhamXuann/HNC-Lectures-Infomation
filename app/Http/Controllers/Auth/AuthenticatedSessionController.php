@@ -8,6 +8,8 @@ use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\View\View;
+use Brian2694\Toastr\Facades\Toastr;
+
 
 class AuthenticatedSessionController extends Controller
 {
@@ -27,6 +29,13 @@ class AuthenticatedSessionController extends Controller
         $request->authenticate();
 
         $request->session()->regenerate();
+
+        // kiểm tra xem trong session của request có tồn tại mục 'login_successful' hay không bằng cách sử dụng phương thức has(). Nếu mục này không tồn tại (điều này có nghĩa là người dùng vừa mới đăng nhập), điều kiện trong if sẽ trả về true.
+        if (!$request->session()->has('login_successful')) {
+            Toastr::success('Đăng nhập thành công', 'Thành công');
+
+            $request->session()->put('login_successful', true);
+        }
 
         return redirect()->intended(route('home', absolute: false));
     }
