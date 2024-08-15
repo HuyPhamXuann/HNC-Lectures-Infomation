@@ -8,16 +8,14 @@
 
 <body>
     <div class="root">
-        <div class="root">
-            {{-- header --}}
-            @include('Lecturer.Layouts.Header.header')
+        {{-- header --}}
+        @include('Lecturer.Layouts.Header.header')
 
-            {{-- main --}}
-            @yield('content')
+        {{-- main --}}
+        @yield('content')
 
-            {{-- footer --}}
-            @include('Lecturer.DefaultLayout.footer')
-        </div>
+        {{-- footer --}}
+        @include('Lecturer.DefaultLayout.footer')
     </div>
 </body>
 

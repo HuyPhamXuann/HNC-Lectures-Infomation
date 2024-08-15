@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Validation\Rules\Password;
 
+
 class PasswordController extends Controller
 {
     /**
@@ -24,6 +25,8 @@ class PasswordController extends Controller
             'password' => Hash::make($validated['password']),
         ]);
 
-        return back()->with('status', 'password-updated');
+        toastify()->success('Đổi mật khẩu thành công!');
+
+        return redirect()->route('home')->with('status', 'password-updated');
     }
 }
