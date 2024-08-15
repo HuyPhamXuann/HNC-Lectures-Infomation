@@ -29,10 +29,6 @@
 </head>
 
 <body>
-    {{-- <div class="guest-sidebar">
-        <img src="{{ asset('asset') }}/images/logoHNC.png" alt="Logo Trường" width="140px">
-        <h2 class="fw-bold text-center fs-3 c-primary pt-4">CỔNG THÔNG TIN<br>GIẢNG VIÊN</h2>
-    </div> --}}
     <div class="left-container">
         <div class="logo-container">
             <img src="{{ asset('asset') }}/images/logoHNC.png" alt="Logo">
@@ -61,28 +57,6 @@
             </footer>
         </div>
     </div>
-
-    {{-- <main class="w-full p-0 mx-3">
-        <header class="w-full head_general-info">
-            <h1 class="fw-bold fs-2 c-primary text-center pb-4">TRƯỜNG CAO ĐẲNG HÀ NỘI<br>HANOI COLLEGE</h1>
-            <hr>
-        </header>
-        <div class="min-h-screen flex flex-col sm:justify-center items-center sm:pt-0 bg-white">
-            <div class="container-login">
-                <div>
-                    <div class="fm-login w-full sm:max-w-md mt-6 px-4 py-4 overflow-hidden sm:rounded-sm">
-                        <h1 class="fw-bold fs-4 c-primary text-center pt-4">CỔNG THÔNG TIN GIẢNG VIÊN</h1>
-                        {{ $slot }}
-                    </div>
-                </div>
-
-                <div class="footer_producer fs-8">
-                    <h3>Trường Cao Đẳng Hà Nội</h3>
-                    <p>©2024 Developed by HPC_21 - v1.0</p>
-                </div>
-            </div>
-        </div>
-    </main> --}}
 </body>
 
 <!-- bootrap -v: 5.5.5 -->
