@@ -5,7 +5,7 @@
             <div class="row">
                 <div class="col l-12">
                     <ul class="flex content-center navbar">
-                        <li class="nav__item"><a class="link link--primary nav--link" href="./homepage.html">Trang chủ</a>
+                        <li class="nav__item"><a class="link link--primary nav--link" href="/home">Trang chủ</a>
                         </li>
                         <li class="nav__item">
                             <a class="link link--primary nav--link dropdown" href="#">Giảng Dạy</a>
@@ -21,8 +21,10 @@
                         <li class="nav__item">
                             <a class="link link--primary nav--link dropdown" href="#">Quản lý quá trình điểm</a>
                             <ul class="dropdown-menu">
-                                <li class="dropdown__item"><a href="./diemdanhsinhvien.html"
-                                        class="link link--black dropdown--link">Điểm danh sinh viên</a></li>
+                                <li class="dropdown__item">
+                                    <a href="/diem-danh-sinh-vien" class="link link--black dropdown--link">Điểm danh
+                                        sinh viên</a>
+                                </li>
                                 <li class="dropdown__item"><a href="./nhapdiemthanhphan.html"
                                         class="link link--black dropdown--link">Nhập điểm thành phần</a></li>
                                 <li class="dropdown__item"><a href="#"
