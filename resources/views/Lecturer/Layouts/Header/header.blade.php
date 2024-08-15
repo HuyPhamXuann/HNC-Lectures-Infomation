@@ -49,9 +49,11 @@
                             </a>
                             <ul class="dropdown-menu">
                                 <li class="dropdown__item"><a href="#"
-                                        class="link link--black dropdown--link">Thông tin cá nhân</a></li>
+                                        class="link link--black dropdown--link">Thông tin cá nhân</a>
+                                </li>
+
                                 <li class="dropdown__item">
-                                    <a href="./changepassword.html" class="link link--black dropdown--link">
+                                    <a href="/profile" class="link link--black dropdown--link">
                                         <span class="flex content-center"><svg class="nav__icon" style="fill: #000"
                                                 xmlns="http://www.w3.org/2000/svg" class="ionicon s-ion-icon"
                                                 viewBox="0 0 512 512">

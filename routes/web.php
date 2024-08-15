@@ -12,13 +12,15 @@ use App\Http\Controllers\ContactController;
 use Illuminate\Support\Facades\Route;
 
 
-Route::middleware('auth')->group(function () {
-    Route::get('/profile', [ProfileController::class, 'index'])->name('profile.index');
-});
+// Route::middleware('auth')->group(function () {
+//     Route::get('/profile', [ProfileController::class, 'index'])->name('profile');
+// });
 
 //Giảng viên
 Route::middleware(['auth', 'lecturer'])->group(function () {
     Route::get('home', [HomeController::class, 'index'])->name('home');
+    Route::get('/profile', [ProfileController::class, 'index'])->name('profile');
+
 });
 
 require __DIR__ . '/auth.php';

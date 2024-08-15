@@ -13,7 +13,9 @@ class ProfileController extends Controller
 {
     public function index()
     {
-        return view('profile.edit');
+        $title = 'Đổi mật khẩu';
+
+        return view('profile.partials.update-password-form', compact('title'));
     }
 
 }
