@@ -26,11 +26,11 @@ MySQL
 **Bước cài đặt**
 1. Clone repository từ GitHub:
 ```
-git clone https://github.com/HieuLeNguyen/HNC_Lecturers.git
+git clone https://github.com/HuyPhamXuann/HNC-Lectures-Infomation
 ```
 2. Di chuyển vào thư mục dự án:
 ```
-cd HNC_Lecturers
+cd HNC_Lecturers-Infomation
 ```
 3. Cài đặt các dependencies thông qua Composer:
 ```
@@ -87,6 +87,6 @@ vd: -m "add Authencation #a17"
 Dự án được phát triển bởi team sinh viên khoa CNTT HPC.
 
 **Liên hệ**<br>
-Nếu bạn có bất kỳ câu hỏi hoặc đề xuất nào, vui lòng liên hệ qua email nguyenhieu157380@gmail.com
+Nếu bạn có bất kỳ câu hỏi hoặc đề xuất nào, vui lòng liên hệ qua email phamxuanhuyforwork@gmail.com
 /**
 
