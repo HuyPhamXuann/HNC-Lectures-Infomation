@@ -24,7 +24,7 @@
                     <x-text-input
                         style="border: none;
                                             font-size: 15px;
-                                            box-shadow: none !important;"
+                                            box-shadow: none !important; outline: none;"
                         id="MaGV" class="block mt-1 w-full" type="text" name="MaGV" :value="old('MaGV')"
                         required autofocus placeholder="Tên đăng nhập" autocomplete="username" />
                 </div>
@@ -47,7 +47,7 @@
                     <x-text-input
                         style="border: none;
                                         font-size: 15px;
-                                        box-shadow: none !important;"
+                                        box-shadow: none !important; outline: none;"
                         id="password" class="block mt-1 w-full" type="password" name="password" required
                         placeholder="Mật khẩu" autocomplete="current-password" />
                 </div>
