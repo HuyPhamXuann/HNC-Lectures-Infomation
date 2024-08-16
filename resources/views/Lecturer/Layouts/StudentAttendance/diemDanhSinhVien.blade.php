@@ -82,7 +82,7 @@
                                 <td>60</td>
                                 <td>40</td>
                                 <td>3</td>
-                                <td><a href="./danhsachdiemdanh.html" class="btn btn--secondary table__btn ">ĐDSV</a></td>
+                                <td><a href="/danh-sach-diem-danh" class="btn btn--secondary table__btn ">ĐDSV</a></td>
                                 <td><button class="btn btn--info table__btn">Import ĐD</button></td>
                                 <td><button class="btn btn--success table__btn">Export ĐD</button></td>
                             </tr>
