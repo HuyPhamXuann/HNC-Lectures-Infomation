@@ -22,21 +22,11 @@ class DanhSachMonHoc extends Model
 
     public function monhocKy()
     {
-        return $this->hasMany(MonHocKy::class, 'MaMonHoc', 'MaMonHoc');
+        return $this->hasOne(MonHocKy::class, 'MaMonHoc', 'MaMonHoc');
     }
 
-    // public function nganh()
-    // {
-    //     return $this->belongsTo(Nganh::class, 'Nganh_ID');
-    // }
-
-    // public function danhsachdiemthi()
-    // {
-    //     return $this->hasMany(DanhSachDiemThi::class, 'MaMonHoc');
-    // }
-
-    // public function danhsachdiemthanhphan()
-    // {
-    //     return $this->hasMany(DanhSachDiemThanhPhan::class, 'MaMonHoc');
-    // }
+    public function tb_nganh()
+    {
+        return $this->belongsTo(Nganh::class, 'Nganh_ID', 'Nganh_ID');
+    }
 }

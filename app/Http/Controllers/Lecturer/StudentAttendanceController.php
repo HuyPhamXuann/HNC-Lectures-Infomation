@@ -21,6 +21,6 @@ class StudentAttendanceController extends Controller
 
         $getDataInfo = $this->studentAttendanceServices->getDataInfo();
 
-        return view('Lecturer.Layouts.StudentAttendance.diemDanhSinhVien', compact('title'));
+        return view('Lecturer.Layouts.StudentAttendance.diemDanhSinhVien', compact('title', 'getDataInfo'));
     }
 }

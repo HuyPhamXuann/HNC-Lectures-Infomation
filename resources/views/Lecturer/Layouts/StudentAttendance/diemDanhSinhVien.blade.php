@@ -13,34 +13,29 @@
                         <select name="search__select-option" id="search__select-option"
                             class="select-option search__select-option">
                             <option value="1">-- Chọn học kỳ --</option>
-                            <option value="2">Học kỳ 1</option>
-                            <option value="3">Học kỳ 2</option>
+                            @foreach ($getDataInfo['kyHocs'] as $kyHoc)
+                                <option value="{{ $kyHoc->id }}">{{ $kyHoc->TenKy }}</option>
+                            @endforeach
                         </select>
                     </div>
-                    <div class="search-option">
+                    {{-- <div class="search-option">
                         <label class="option-name search__option-name" for="search__select-optionc">Năm học:</label>
                         <select name="search__select-option" id="search__select-option"
                             class="select-option search__select-option">
                             <option class="optional" value="1">-- Chọn năm học --</option>
-                            <option class="optional" value="1">2020-2021</option>
-                            <option class="optional" value="2">2021-2022</option>
-                            <option class="optional" value="3">2022-2023</option>
-                            <option class="optional" value="4">2023-2024</option>
-                            <option class="optional" value="5">2024-2025</option>
-                            <option class="optional" value="6">2025-2026</option>
-                            <option class="optional" value="7">2026-2027</option>
-                            <option class="optional" value="8">2027-2028</option>
+                            @foreach ($getDataInfo['kyHocs'] as $kyHoc)
+                                <option class="optional" value="{{ $kyHoc->NamBD }}-{{ $kyHoc->NamKT }}">2020-2021</option>
+                            @endforeach
                         </select>
-                    </div>
+                    </div> --}}
                     <div class="search-option">
                         <label class="option-name search__option-name" for="search__select-option">Môn học:</label>
                         <select name="search__select-option" id="search__select-option"
                             class="select-option search__select-option">
                             <option value="1">-- Chọn môn học --</option>
-                            <option value="1">An toàn và bảo mật thông tin</option>
-                            <option value="2">Hệ quản trị cơ sở dữ liệu</option>
-                            <option value="3">Thiết kế website</option>
-                            <option value="4">Phân tích và thiết kế hệ thống</option>
+                            @foreach ($getDataInfo['monHocs'] as $monHoc)
+                                <option value="{{ $monHoc->MaMonHoc }}">{{ $monHoc->TenMon }}</option>
+                            @endforeach
                         </select>
                     </div>
                     <div class="search-option">
@@ -48,10 +43,9 @@
                         <select name="search__select-option" id="search__select-option"
                             class="select-option search__select-option">
                             <option value="1">-- Chọn lớp học phần --</option>
-                            <option value="2">1621CNT01</option>
-                            <option value="3">1621CNT02</option>
-                            <option value="4">1621CNT03</option>
-                            <option value="5">1621CNT04</option>
+                            @foreach ($getDataInfo['giangVien'] as $lop)
+                                <option value="{{ $lop->MaLop }}">{{ $lop->TenLop }}</option>
+                            @endforeach
                         </select>
                     </div>
                     <div class="search__btn">
@@ -74,51 +68,29 @@
                             </tr>
                         </thead>
                         <tbody class="text-center">
+                            {{-- @foreach ($getDataInfo['monHocLop'] as $index => $item)
+                                <tr class="tr__title">
+                                    <td>{{ $index }}</td>
+                                    <td>{{ $item->TenMon }}</td>
+                                    <td>{{ $item->TenLop }}</td>
+                                    <td>{{ $item->HoDem }} {{ $item->Ten }}</td>
+                                    <td>{{ $item->SoTiet }}</td>
+                                    <td>50</td>
+                                    <td>{{ $item->SoTin }}</td>
+                                    <td><a href="/danh-sach-diem-danh" class="btn btn--secondary table__btn ">ĐDSV</a></td>
+                                    <td><button class="btn btn--info table__btn">Import ĐD</button></td>
+                                    <td><button class="btn btn--success table__btn">Export ĐD</button></td>
+                                </tr>
+                            @endforeach --}}
                             <tr class="tr__title">
                                 <td>1</td>
-                                <td>An toàn bảo mật thông tin</td>
-                                <td>1621CNT01</td>
-                                <td>Phạm Xuân Huy</td>
+                                <td>Han Quoc</td>
+                                <td>NNHQ</td>
+                                <td>Manh Hung</td>
                                 <td>60</td>
-                                <td>40</td>
+                                <td>50</td>
                                 <td>3</td>
                                 <td><a href="/danh-sach-diem-danh" class="btn btn--secondary table__btn ">ĐDSV</a></td>
-                                <td><button class="btn btn--info table__btn">Import ĐD</button></td>
-                                <td><button class="btn btn--success table__btn">Export ĐD</button></td>
-                            </tr>
-                            <tr class="tr__title">
-                                <td>2</td>
-                                <td>Hệ quản trị cơ sở dữ liệu</td>
-                                <td>1621CNT02</td>
-                                <td>Phạm Xuân Huy</td>
-                                <td>60</td>
-                                <td>40</td>
-                                <td>3</td>
-                                <td><a href="./danhsachdiemdanh.html" class="btn btn--secondary table__btn">ĐDSV</a></td>
-                                <td><button class="btn btn--info table__btn">Import ĐD</button></td>
-                                <td><button class="btn btn--success table__btn">Export ĐD</button></td>
-                            </tr>
-                            <tr>
-                                <td>3</td>
-                                <td>Phân tích và thiết kế hệ thống</td>
-                                <td>1621CNT03</td>
-                                <td>Phạm Xuân Huy</td>
-                                <td>60</td>
-                                <td>40</td>
-                                <td>3</td>
-                                <td><a href="./danhsachdiemdanh.html" class="btn btn--secondary table__btn">ĐDSV</a></td>
-                                <td><button class="btn btn--info table__btn">Import ĐD</button></td>
-                                <td><button class="btn btn--success table__btn">Export ĐD</button></td>
-                            </tr>
-                            <tr>
-                                <td>4</td>
-                                <td>Thiết kế website</td>
-                                <td>1621CNT04</td>
-                                <td>Phạm Xuân Huy</td>
-                                <td>60</td>
-                                <td>40</td>
-                                <td>3</td>
-                                <td><a href="./danhsachdiemdanh.html" class="btn btn--secondary table__btn">ĐDSV</a></td>
                                 <td><button class="btn btn--info table__btn">Import ĐD</button></td>
                                 <td><button class="btn btn--success table__btn">Export ĐD</button></td>
                             </tr>

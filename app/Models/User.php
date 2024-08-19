@@ -56,7 +56,7 @@ class User extends Authenticatable
         'NhomMau',
         'HinhAnh',
         'LoaiGV',
-        // 'Nganh_ID',
+        'Nganh_ID',
     ];
 
 
@@ -80,5 +80,20 @@ class User extends Authenticatable
         return [
             'password' => 'hashed',
         ];
+    }
+
+    public function tb_nganh()
+    {
+        return $this->belongsTo(Nganh::class, 'Nganh_ID', 'Nganh_ID');
+    }
+
+    public function lop()
+    {
+        return $this->hasMany(Lop::class, 'MaGV', 'MaGV');
+    }
+
+    public function giangvien_monhoc()
+    {
+        return $this->hasMany(GiangVienMonHoc::class, 'MaGV', 'MaGV');
     }
 }

@@ -30,7 +30,7 @@
                 </div>
             </div>
             <div>
-                <x-input-error style="font-size: 12px" :messages="$errors->get('MaGV')" class="mt-2" />
+                <x-input-error style="font-size: 12px; color: red" :messages="$errors->get('MaGV')" class="mt-2" />
             </div>
 
             <!-- Password -->
@@ -53,7 +53,7 @@
                 </div>
             </div>
             <div>
-                <x-input-error :messages="$errors->get('password')" class="mt-2" />
+                <x-input-error style="font-size: 12px; color: red" :messages="$errors->get('password')" class="mt-2" />
             </div>
 
             <div class="flex items-center justify-center mt-4">

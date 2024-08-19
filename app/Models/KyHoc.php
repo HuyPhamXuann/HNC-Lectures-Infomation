@@ -20,29 +20,24 @@ class KyHoc extends Model
         'GhiChu'
     ];
 
-    // public function khoahoc()
-    // {
-    //     return $this->belongsTo(KhoaHoc::class, 'KhoaHoc_ID');
-    // }
+    public function khoahoc()
+    {
+        return $this->belongsTo(KhoaHoc::class, 'KhoaHoc_ID');
+    }
 
-    // public function monhocKy()
-    // {
-    //     return $this->hasMany(MonHocKy::class, 'KyHoc_ID');
-    // }
+    public function monhocKy()
+    {
+        return $this->hasMany(MonHocKy::class, 'KyHoc_ID');
+    }
 
-    // public function khoanphi()
-    // {
-    //     return $this->belongsTo(KhoanPhi::class, 'KyHoc_ID');
-    // }
-
-    // public function danhsachMonhoc()
-    // {
-    //     return $this->hasManyThrough(DanhSachMonHoc::class, MonHocKy::class, 'KyHoc_ID', 'MaMonHoc', 'id', 'MaMonHoc');
-    // }
+    public function danhsachMonhoc()
+    {
+        return $this->hasManyThrough(DanhSachMonHoc::class, MonHocKy::class, 'KyHoc_ID', 'MaMonHoc', 'id', 'MaMonHoc');
+    }
 
     // // thiết lập mối quan hệ nhiều-nhiều với model User thông qua bảng trung gian LopHoc.
-    // public function sinhvien()
-    // {
-    //     return $this->belongsToMany(User::class, 'lophoc', 'KyHoc_ID', 'SinhVien_ID');
-    // }
+    public function sinhvien()
+    {
+        return $this->belongsToMany(User::class, 'lophoc', 'KyHoc_ID', 'SinhVien_ID');
+    }
 }
