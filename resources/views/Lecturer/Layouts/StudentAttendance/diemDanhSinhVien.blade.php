@@ -7,41 +7,50 @@
                 <div class="content__title">
                     <h3>Danh sách môn học</h3>
                 </div>
-                <div class="search-container">
-                    <div class="search-option">
-                        <label class="option-name search__option-name" for="hocky">Học kỳ:</label>
-                        <select name="search__select-option" id="search__select-option"
-                            class="select-option search__select-option">
-                            <option value="1">-- Chọn học kỳ --</option>
-                            @foreach ($getDataInfo['kyHocs'] as $kyHoc)
-                                <option value="{{ $kyHoc->id }}">{{ $kyHoc->TenKy }}</option>
-                            @endforeach
-                        </select>
+                <form action="{{ url('/diem-danh-sinh-vien') }}" method="POST">
+                    <div class="search-container">
+                        @csrf
+                        <div class="search-option">
+                            <label class="option-name search__option-name" for="hocky">Học kỳ:</label>
+                            <select name="hocky" id="hocky" class="select-option search__select-option">
+                                <option value="">-- Chọn học kỳ --</option>
+                                @foreach ($getDataInfo['kyHocs'] as $kyHoc)
+                                    <option
+                                        value="{{ $kyHoc->id }}"{{ request('hocky') === $kyHoc->TenKy ? 'selected' : '' }}>
+                                        {{ $kyHoc->TenKy }}</option>
+                                @endforeach
+                            </select>
+                        </div>
+
+                        <div class="search-option">
+                            <label class="option-name search__option-name" for="monhoc">Môn học:</label>
+                            <select name="monhoc" id="monhoc" class="select-option search__select-option">
+                                <option value="">-- Chọn môn học --</option>
+                                @foreach ($getDataInfo['monHocs'] as $monHoc)
+                                    <option value="{{ $monHoc->MaMonHoc }}"
+                                        {{ request('monhoc') === $monHoc->MaMonHoc ? 'selected' : '' }}>
+                                        {{ $monHoc->TenMon }}
+                                    </option>
+                                @endforeach
+                            </select>
+                        </div>
+
+                        <div class="search-option">
+                            <label class="option-name search__option-name" for="lop">Lớp học phần:</label>
+                            <select name="lop" id="lop" class="select-option search__select-option">
+                                <option value="">-- Chọn lớp học phần --</option>
+                                @foreach ($getDataInfo['giangVien'] as $lop)
+                                    <option value="{{ $lop->MaLop }}"
+                                        {{ request('lop') == $lop->MaLop ? 'selected' : '' }}>{{ $lop->TenLop }}</option>
+                                @endforeach
+                            </select>
+                        </div>
+
+                        <div class="search__btn">
+                            <button type="submit" class="btn btn--primary btn--search">Tìm kiếm</button>
+                        </div>
                     </div>
-                    <div class="search-option">
-                        <label class="option-name search__option-name" for="search__select-option">Môn học:</label>
-                        <select name="search__select-option" id="search__select-option"
-                            class="select-option search__select-option">
-                            <option value="1">-- Chọn môn học --</option>
-                            @foreach ($getDataInfo['monHocs'] as $monHoc)
-                                <option value="{{ $monHoc->MaMonHoc }}">{{ $monHoc->TenMon }}</option>
-                            @endforeach
-                        </select>
-                    </div>
-                    <div class="search-option">
-                        <label class="option-name search__option-name" for="search__select-option">Lớp học phần:</label>
-                        <select name="search__select-option" id="search__select-option"
-                            class="select-option search__select-option">
-                            <option value="1">-- Chọn lớp học phần --</option>
-                            @foreach ($getDataInfo['giangVien'] as $lop)
-                                <option value="{{ $lop->MaLop }}">{{ $lop->TenLop }}</option>
-                            @endforeach
-                        </select>
-                    </div>
-                    <div class="search__btn">
-                        <button type="submit" class="btn btn--primary btn--search">Tìm kiếm</button>
-                    </div>
-                </div>
+                </form>
                 <!-- table  -->
                 <div class="table-container animate__animated animate__fadeInUp">
                     <table class="table table--primary">

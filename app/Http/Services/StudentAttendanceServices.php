@@ -12,7 +12,7 @@ use App\Models\GiangVienMonHoc;
 
 class StudentAttendanceServices
 {
-    public function getDataInfo()
+    public function getDataInfo($filters = [])
     {
         // Lấy giảng viên hiện tại
         $user = Auth::user();
@@ -64,7 +64,7 @@ class StudentAttendanceServices
             ->get();
 
         // Lấy danh sách môn học với thông tin TenMon, SoTin, SoTiet, TenLop
-        $dataInfo = GiangVienMonHoc::query()
+        $dataInfoQuery = GiangVienMonHoc::query()
             ->join('monhoc_ky', 'giangvien_monhoc.MonHocKy_ID', '=', 'monhoc_ky.id')
             ->join('lop', 'giangvien_monhoc.MaLop', '=', 'lop.MaLop')
             ->join('danhsach_monhoc', 'monhoc_ky.MaMonHoc', '=', 'danhsach_monhoc.MaMonHoc')
@@ -78,10 +78,25 @@ class StudentAttendanceServices
                 'lop.TenLop'
             )
             ->where('hoso_giangvien.MaGV', $maGV)
-            ->distinct()
-            ->get();
+            ->distinct();
 
         // dd($dataInfo);
+
+        // điều khiện để lọc
+        if (!empty($filters['hocky'])) {
+            $dataInfoQuery->where('monhoc_ky.KyHoc_id', $filters['hocky']);
+        }
+
+        if (!empty($filters['monhoc'])) {
+            $dataInfoQuery->where('danhsach_monhoc.MaMonHoc', $filters['monhoc']);
+        }
+
+        if (!empty($filters['lop'])) {
+            $dataInfoQuery->where('giangvien_monhoc.MaLop', $filters['lop']);
+        }
+
+        $dataInfo = $dataInfoQuery->get();
+
 
         return compact('giangVien', 'kyHocs', 'monHocs', 'monHocKy', 'dataInfo');
     }
