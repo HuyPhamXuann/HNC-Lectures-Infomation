@@ -28,18 +28,23 @@ class Lop extends Model
         return $this->belongsTo(KhoaHoc::class, 'KhoaHoc_ID');
     }
 
-    // public function nganh()
-    // {
-    //     return $this->belongsTo(Nganh::class, 'Nganh_ID');
-    // }
+    public function tb_nganh()
+    {
+        return $this->belongsTo(Nganh::class, 'Nganh_ID');
+    }
 
     public function lophoc()
     {
         return $this->hasMany(LopHoc::class, 'MaLop', 'MaLop');
     }
 
-    // public function lichhoc_lop()
-    // {
-    //     return $this->hasMany(LopHoc::class, 'MaLop');
-    // }
+    public function hoso_giangvien()
+    {
+        return $this->belongsTo(User::class, 'MaGV', 'MaGV');
+    }
+
+    public function giangvien_monhoc()
+    {
+        return $this->hasMany(GiangVienMonHoc::class, 'MaLop', 'MaLop');
+    }
 }

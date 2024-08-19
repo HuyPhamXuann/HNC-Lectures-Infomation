@@ -24,13 +24,13 @@
                     <x-text-input
                         style="border: none;
                                             font-size: 15px;
-                                            box-shadow: none !important;"
+                                            box-shadow: none !important; outline: none;"
                         id="MaGV" class="block mt-1 w-full" type="text" name="MaGV" :value="old('MaGV')"
                         required autofocus placeholder="Tên đăng nhập" autocomplete="username" />
                 </div>
             </div>
             <div>
-                <x-input-error style="font-size: 12px" :messages="$errors->get('MaGV')" class="mt-2" />
+                <x-input-error style="font-size: 12px; color: red" :messages="$errors->get('MaGV')" class="mt-2" />
             </div>
 
             <!-- Password -->
@@ -47,13 +47,13 @@
                     <x-text-input
                         style="border: none;
                                         font-size: 15px;
-                                        box-shadow: none !important;"
+                                        box-shadow: none !important; outline: none;"
                         id="password" class="block mt-1 w-full" type="password" name="password" required
                         placeholder="Mật khẩu" autocomplete="current-password" />
                 </div>
             </div>
             <div>
-                <x-input-error :messages="$errors->get('password')" class="mt-2" />
+                <x-input-error style="font-size: 12px; color: red" :messages="$errors->get('password')" class="mt-2" />
             </div>
 
             <div class="flex items-center justify-center mt-4">

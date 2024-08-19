@@ -27,4 +27,9 @@ class MonHocKy extends Model
     {
         return $this->belongsTo(KyHoc::class, 'KyHoc_ID');
     }
+
+    public function giangvien_monhoc()
+    {
+        return $this->hasMany(GiangVienMonHoc::class, 'MonHocKy_ID');
+    }
 }

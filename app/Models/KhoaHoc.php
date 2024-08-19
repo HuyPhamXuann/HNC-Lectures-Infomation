@@ -26,13 +26,8 @@ class KhoaHoc extends Model
         return $this->hasMany(Lop::class, 'KhoaHoc_ID');
     }
 
-    // public function kyhoc()
-    // {
-    //     return $this->hasMany(KyHoc::class, 'KhoaHoc_ID');
-    // }
-
-    // public function hocphi()
-    // {
-    //     return $this->hasMany(HocPhi::class, 'KhoaHoc_ID');
-    // }
+    public function kyhoc()
+    {
+        return $this->hasMany(KyHoc::class, 'KhoaHoc_ID');
+    }
 }
