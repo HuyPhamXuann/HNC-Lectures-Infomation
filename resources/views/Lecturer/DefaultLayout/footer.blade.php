@@ -20,5 +20,7 @@
     integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
 </script>
 
-<script src=""></script>
+{{-- js thư viện lịch --}}
+<script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+@stack('flatpickr')
 @toastifyJs

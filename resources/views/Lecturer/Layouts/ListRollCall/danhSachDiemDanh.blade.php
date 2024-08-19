@@ -15,7 +15,13 @@
                 <!-- Date-picker -->
                 <div class="flex content-center justify-end" style="gap: 10px;">
                     <label for="dateofbirth" style="font-size: 14px;">Ngày điểm danh:</label>
-                    <input type="date" name="dateofbirth" id="dateofbirth">
+                    {{-- <input type="date" name="dateofbirth" id="dateofbirth"> --}}
+                    <input type="date" id="myID" name="selected_date" class="flatpick input-date ct-shape"
+                        value="" placeholder="{{ $currentDate->format('Y-m-d') }}" readonly
+                        style="padding: 10px;
+                        border-radius: 4px;
+                        outline: none;
+                        border: 1px solid #ccc;">
                 </div>
                 <!-- table  -->
                 <div class="table-container animate__animated animate__fadeInUp table-list">
@@ -355,7 +361,6 @@
                                 </td>
                             </tr>
                             <tr class="tr__title">
-                                <!-- Xin chao -->
                                 <td>Xin chao cac ban</td>
                                 <td>1</td>
                                 <td>2109610335</td>
@@ -401,3 +406,24 @@
         </div>
     </div>
 @endsection
+
+@push('flatpickr')
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var input = document.getElementById('myID');
+
+            flatpickr("#myID", {
+                enableTime: false,
+                clickOpens: true,
+                disableMobile: true,
+                onClose: function(selectedDates, dateStr, instance) {
+                    // Loại bỏ focus sau khi chọn ngày)
+                    input.blur();
+                },
+                onChange: function(selectedDates, dateStr, instance) {
+                    document.getElementById('scheduleForm').submit();
+                }
+            });
+        })
+    </script>
+@endpush
