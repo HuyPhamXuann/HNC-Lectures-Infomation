@@ -18,16 +18,6 @@
                             @endforeach
                         </select>
                     </div>
-                    {{-- <div class="search-option">
-                        <label class="option-name search__option-name" for="search__select-optionc">Năm học:</label>
-                        <select name="search__select-option" id="search__select-option"
-                            class="select-option search__select-option">
-                            <option class="optional" value="1">-- Chọn năm học --</option>
-                            @foreach ($getDataInfo['kyHocs'] as $kyHoc)
-                                <option class="optional" value="{{ $kyHoc->NamBD }}-{{ $kyHoc->NamKT }}">2020-2021</option>
-                            @endforeach
-                        </select>
-                    </div> --}}
                     <div class="search-option">
                         <label class="option-name search__option-name" for="search__select-option">Môn học:</label>
                         <select name="search__select-option" id="search__select-option"
@@ -68,7 +58,7 @@
                             </tr>
                         </thead>
                         <tbody class="text-center">
-                            {{-- @foreach ($getDataInfo['monHocLop'] as $index => $item)
+                            @foreach ($getDataInfo['dataInfo'] as $index => $item)
                                 <tr class="tr__title">
                                     <td>{{ $index }}</td>
                                     <td>{{ $item->TenMon }}</td>
@@ -81,19 +71,7 @@
                                     <td><button class="btn btn--info table__btn">Import ĐD</button></td>
                                     <td><button class="btn btn--success table__btn">Export ĐD</button></td>
                                 </tr>
-                            @endforeach --}}
-                            <tr class="tr__title">
-                                <td>1</td>
-                                <td>Han Quoc</td>
-                                <td>NNHQ</td>
-                                <td>Manh Hung</td>
-                                <td>60</td>
-                                <td>50</td>
-                                <td>3</td>
-                                <td><a href="/danh-sach-diem-danh" class="btn btn--secondary table__btn ">ĐDSV</a></td>
-                                <td><button class="btn btn--info table__btn">Import ĐD</button></td>
-                                <td><button class="btn btn--success table__btn">Export ĐD</button></td>
-                            </tr>
+                            @endforeach
                         </tbody>
                     </table>
                 </div>
