@@ -9,6 +9,11 @@ use Carbon\Carbon;
 
 class ListRollCallController extends Controller
 {
+
+    public function __construct()
+    {
+
+    }
     public function index(Request $request)
     {
         $title = 'Danh sách điểm danh';
@@ -24,6 +29,7 @@ class ListRollCallController extends Controller
 
             session(['currentDate' => $currentDate]);
         }
+        ;
 
         return view('Lecturer.Layouts.ListRollCall.danhSachDiemDanh', compact('title', 'currentDate'));
     }
